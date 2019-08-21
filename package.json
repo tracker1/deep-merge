@@ -1,0 +1,24 @@
+{
+  "name": "@tracker1/deep-merge",
+  "version": "1.0.0",
+  "description": "Deep Merge JavaScript Objects",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracker1/deep-merge.git"
+  },
+  "keywords": [
+    "object",
+    "merge",
+    "deep"
+  ],
+  "author": "Michael J. Ryan <tracker1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tracker1/deep-merge/issues"
+  },
+  "homepage": "https://github.com/tracker1/deep-merge#readme",
+  "scripts": {
+    "test": "npx jest --coverage"
+  }
+}
