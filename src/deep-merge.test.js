@@ -39,20 +39,20 @@ describe('deep-merge/deepMerge', () => {
     const r = deepMerge({}, b);
     expect(b).toEqual(r);
     expect(b === r).toBeFalsy();
-  })
+  });
 
   it('will return b when a is simple', () => {
-    const b = { a: 1, b: { c: 2 }};
+    const b = { a: 1, b: { c: 2 } };
     expect(deepMerge(0, b)).toEqual(b);
   });
 
   it('will return b when a is an array', () => {
-    const b = { a: 1, b: { c: 2 }};
+    const b = { a: 1, b: { c: 2 } };
     expect(deepMerge([], b)).toEqual(b);
   });
 
   it('will return b when a is a Date', () => {
-    const b = { a: 1, b: { c: 2 }};
+    const b = { a: 1, b: { c: 2 } };
     expect(deepMerge(new Date(), b)).toEqual(b);
   });
 
@@ -60,7 +60,7 @@ describe('deep-merge/deepMerge', () => {
     const a = [1, 2, 3];
     const b = [4, 5, 6];
     expect(deepMerge(a, b)).toEqual(b);
-  })
+  });
 
   it('will clear null overrides', () => {
     const a = { a: { b: {} } };
@@ -70,9 +70,9 @@ describe('deep-merge/deepMerge', () => {
   });
 
   it('will replace an object when __REPLACE__ is set and truthy', () => {
-    const a = { a: 1, b: { c: 1 }};
-    const b = { c: 1, b: { __REPLACE__: true, d: 2 }};
-    const exp = { a: 1, c: 1, b: { d: 2 }};
+    const a = { a: 1, b: { c: 1 } };
+    const b = { c: 1, b: { __REPLACE__: true, d: 2 } };
+    const exp = { a: 1, c: 1, b: { d: 2 } };
     expect(deepMerge(a, b)).toEqual(exp);
   });
 });
@@ -87,7 +87,7 @@ describe('deep-merge/sortObject', () => {
       length: 1,
       map: () => 1234,
     };
-    expect(sortObject(a)).toStrictEqual(1234)
+    expect(sortObject(a)).toStrictEqual(1234);
   });
 
   it('will clone dates', () => {

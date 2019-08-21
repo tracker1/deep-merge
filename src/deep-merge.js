@@ -1,6 +1,14 @@
 function isSimple(obj) {
   const t = (typeof obj).trim().toLowerCase();
-  if (obj === null || t === 'undefined' || t === 'boolean' || t === 'number' || t === 'string' || t === 'function') return true;
+  if (
+    obj === null ||
+    t === 'undefined' ||
+    t === 'boolean' ||
+    t === 'number' ||
+    t === 'string' ||
+    t === 'function'
+  )
+    return true;
   return false;
 }
 
@@ -30,10 +38,12 @@ function sortObject(obj) {
   if (obj instanceof Date) return new Date(obj.valueOf()); // clone dates
 
   // return sorted object
-  return Object.keys(obj).sort().reduce((o, k) => {
-    if (obj[k] === undefined || k === '__REPLACE__') return o;
-    return Object.assign(o, {[k]: sortObject(obj[k])});
-  }, {});
+  return Object.keys(obj)
+    .sort()
+    .reduce((o, k) => {
+      if (obj[k] === undefined || k === '__REPLACE__') return o;
+      return Object.assign(o, { [k]: sortObject(obj[k]) });
+    }, {});
 }
 
 function deepMerge(a, b) {
@@ -50,14 +60,11 @@ function deepMerge(a, b) {
     .concat(...Object.keys(a))
     .concat(...Object.keys(b))
     .sort()
-    .filter((v,i,a) => a.indexOf(v) === i)
-    .reduce(
-      (o, k) => {
-        const v = deepMerge(a[k], b[k]);
-        return v === undefined ? o : Object.assign(o, {[k]: v});
-      },
-      {}
-    );
+    .filter((v, i, a) => a.indexOf(v) === i)
+    .reduce((o, k) => {
+      const v = deepMerge(a[k], b[k]);
+      return v === undefined ? o : Object.assign(o, { [k]: v });
+    }, {});
 }
 
 module.exports = { deepMerge, sortObject };

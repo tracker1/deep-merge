@@ -18,6 +18,15 @@
     "url": "https://github.com/tracker1/deep-merge/issues"
   },
   "homepage": "https://github.com/tracker1/deep-merge#readme",
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "parser": "babel",
+    "jsxBracketSameLine": true
+  },
   "scripts": {
     "test": "npx jest --coverage"
   }
